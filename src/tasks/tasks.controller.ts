@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
+import { createTaskDto } from './dto/create-task.dto';
 import { Task } from './tasks.model';
 import { TasksService } from './tasks.service';
 
@@ -16,10 +17,10 @@ export class TasksController {
         // nestJS provide us 2 way to supply input both of them use @Body decorator
         // 1st option is entire full body and second one is retrieve titled item in body
         
-    createTask(
-        @Body("title") title: string,
-        @Body("description") description: string
-        ): Task{
-        return this.tasksService.createTask(title,description)
+    // createTask(
+        // @Body("title") title: string,
+        // @Body("description") description: string bunlar yerin artik DTO larimiz var
+        createTask(@Body() createTaskDto : createTaskDto): Task{
+        return this.tasksService.createTask(createTaskDto)
     }
 }
