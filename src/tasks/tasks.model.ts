@@ -1,0 +1,16 @@
+//we can use interfaces or class 
+export interface Task{
+    id: string
+    title: string
+    description: string
+    status: TaskStatus
+
+} 
+
+// we will use ENUM
+
+export enum TaskStatus{
+    OPEN = "OPEN",
+    IN_PROGRESS = "IN_PROGRESS",
+    DONE = "DONE"
+}
