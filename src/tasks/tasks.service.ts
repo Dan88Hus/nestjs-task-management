@@ -42,6 +42,12 @@ export class TasksService {
     //     }
     //     return found
     // }
+
+    async getTasks(filterDto: GetTasksFilterDto): Promise<Task[]>{
+        return this.taskRepository.getTasks(filterDto)
+    }
+
+
     async getTaskById(id: number): Promise<Task>{
         const found = await this.taskRepository.findOne(id)
         if(!found){
@@ -82,6 +88,13 @@ export class TasksService {
     //     task.status = status
     //     return task
     // }
+
+    async updateTaskStatus(id:number, status: TaskStatus): Promise<Task>{
+        const task = await this.getTaskById(id)
+        task.status = status
+        return task
+    }
+
     // DB connection dan sonra comment ettik ---------------------------
 
  
