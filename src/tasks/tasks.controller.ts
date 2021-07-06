@@ -1,6 +1,7 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UsePipes, ValidationPipe } from '@nestjs/common';
 import { createTaskDto } from './dto/create-task.dto';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
+import { TaskStatusValidationPipe } from './pipes/task-status-validation.pipe';
 import { Task, TaskStatus } from './tasks.model';
 import { TasksService } from './tasks.service';
 
@@ -18,6 +19,7 @@ export class TasksController {
     }
 
     @Post()
+    @UsePipes(ValidationPipe)
     // createTask(@Body() body){ // veya (@Body("title") title: string)gibi
         // nestJS provide us 2 way to supply input both of them use @Body decorator
         // 1st option is entire full body and second one is retrieve titled item in body
@@ -41,7 +43,7 @@ export class TasksController {
     @Patch("/:id/status")
     updateTaskStatus(
         @Param("id") id: string,
-        @Body("status") status: TaskStatus
+        @Body("status", TaskStatusValidationPipe) status: TaskStatus
     ): Task{ 
         return this.tasksService.updateTaskStatus(id, status)
     }

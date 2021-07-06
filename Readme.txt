@@ -53,8 +53,28 @@ DTO-Data Transfer Object
         DTO is NOT a model definition. It defines the shape of data for spesific case, for example creating a task
         DTO can be defined as classes or interfaces
         DTO are NOT mandatory, you can still develop without DTO, it makes easy to maintain and refactor your code
+Pipes 
+        pipes operate on the arguments to be processed by the route handler, just before the handler is called
+        pipes can perform data transformation or data validation
+        can return data either original or modified which will be passed on the route handler
+        ParseintPipe, ValidationPipe 
+        are classed @Injectable decorator 
+        the Transform() method accepts two parameters
+                value: value of the processed arguments
+                metadata(optional): an object metdadata about the argument 
+                handler level pipes @UsePPipes() process allparameters for incoming request.
+                parameter level type only specific parameter will be processed
+                        @Body("description", somepipe) description
+                global pipes are application level will be applied to any incoming request 
+                        app.useGlobalPipes(SomePipe)
+                packages required are class validator and class transform
+                yarn add class-validator class-transformer
+                        we did in DTO (create-taskDTO)
+                        @UsePipes(ValidationPipe) is smart to get validation via DTO on controller 
+                  
+                
 
-
+                
 
 
 
