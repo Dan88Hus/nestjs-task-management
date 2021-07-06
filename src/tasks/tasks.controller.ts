@@ -10,7 +10,7 @@ export class TasksController {
     constructor(private tasksService: TasksService) {}
 
     @Get() // we will get filter as query ?xxx=yyyy gibi
-    getTasks(@Query() filterDto: GetTasksFilterDto): Task[]{
+    getTasks(@Query(ValidationPipe) filterDto: GetTasksFilterDto): Task[]{
         if (Object.keys(filterDto).length){
             return this.tasksService.getTasksWithFilters(filterDto)
         } else{
