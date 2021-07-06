@@ -71,8 +71,12 @@ Pipes
                 yarn add class-validator class-transformer
                         we did in DTO (create-taskDTO)
                         @UsePipes(ValidationPipe) is smart to get validation via DTO on controller 
-                  
-                
+TypeORM
+        yarn add @nestjs/typeorm typeorm pg
+        to initialize DB we use app module to globalize it 
+                config yazdiktan sonra app.module de import kisminada yaziyoruz
+        entity olusturdak sonra Repository olusturuyoruz entitynin gorunme formati icin ve custom Logic icin such as validation and etc. 
+                task.module de import ediyoruz
 
                 
 
