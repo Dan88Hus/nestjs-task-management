@@ -94,6 +94,9 @@ created DTO for auth paramaters auth-creadentials.dto.ts
                 we aim to retun service with body values 
                         constructor da auth service as parameter 
 yarn add @nestjs/jwt @nestjs/passport passport passport-jwt
+modleleri birbirine baglamak icin task,modulune AuthModule import ettik
+
+
                 
 
 
