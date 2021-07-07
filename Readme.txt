@@ -77,6 +77,17 @@ TypeORM
                 config yazdiktan sonra app.module de import kisminada yaziyoruz
         entity olusturdak sonra Repository olusturuyoruz entitynin gorunme formati icin ve custom Logic icin such as validation and etc. 
                 task.module de import ediyoruz
+nest g module auth 
+nest g controller auth --no-spec 
+nest g service auth --no-spec 
+created user.entity.ts 
+created user.repository.ts
+        dont forget to import auth module 
+        auth.service.ts de ise contructor kisminda userRepository i ekliyoruz as @InjectRepository
+        
+
+        
+
 
                 
 
