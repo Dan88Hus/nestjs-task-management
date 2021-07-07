@@ -93,6 +93,7 @@ created DTO for auth paramaters auth-creadentials.dto.ts
         we go controller file to specify REST api method 
                 we aim to retun service with body values 
                         constructor da auth service as parameter 
+yarn add @nestjs/jwt @nestjs/passport passport passport-jwt
                 
 
 
