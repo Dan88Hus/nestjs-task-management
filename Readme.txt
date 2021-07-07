@@ -84,7 +84,18 @@ created user.entity.ts
 created user.repository.ts
         dont forget to import auth module 
         auth.service.ts de ise contructor kisminda userRepository i ekliyoruz as @InjectRepository
-        
+created DTO for auth paramaters auth-creadentials.dto.ts 
+        add as parameter in user.repository.ts cunku input parameter will pass on DTO 
+        now we can destructure our dto 
+        we go service that return user.repositroy method
+                {DTO parameters type, repository destructuring of DTO}
+                {service de islem yapip repository de DB de islem yapiyoruz, yani service repository e donuyor}
+        we go controller file to specify REST api method 
+                we aim to retun service with body values 
+                        constructor da auth service as parameter 
+                
+
+
 
         
 
