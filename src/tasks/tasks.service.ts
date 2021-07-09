@@ -80,8 +80,11 @@ export class TasksService {
     //      this.tasks = this.tasks.filter((task)=> task.id !== found.id)
     // }
 
-    async deleteTask(id: number): Promise<void> {
-         const result = await this.taskRepository.delete(id)
+    async deleteTask(id: number, user: User): Promise<void> {
+         const result = await this.taskRepository.delete({id, userId: user.id}) // repository oldumu DB deki kolon adlari gecerli
+         if(result.affected === 0){
+             throw new NotFoundException(`Task ID ${id} not found `)
+         }
     }
 
 
