@@ -1,0 +1,18 @@
+#  is related with main.ts file and it contains global variables which are used in production, in development and etc 
+
+
+server:
+  port: 3000
+
+db:
+  type: 'postgres'
+  # host: "localhost",
+  port: 5432,
+  # username: "dev",
+  # password: "123",
+  database: 'dev'
+  # entities: [__dirname + "/../**/*.entity.ts"],
+  # synchronize: true,
+
+jwt:
+  expiresIn: 3600

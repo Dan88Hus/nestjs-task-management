@@ -1,0 +1,4 @@
+db:
+  synchronize: false,
+
+#  yazmadigimiz jwt secret gibi veya db uri ler env.variable da yazilacak

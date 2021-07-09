@@ -95,7 +95,20 @@ created DTO for auth paramaters auth-creadentials.dto.ts
                         constructor da auth service as parameter 
 yarn add @nestjs/jwt @nestjs/passport passport passport-jwt
 modleleri birbirine baglamak icin task,modulune AuthModule import ettik
-
+Windows users only: Environment Variables
+Set up environment variables via NPM scripts. This is not supported in Windows by default.
+        To overcome this, please install the win-node-env NPM package globally.
+        If you are using NPM:
+        npm install -g win-node-env
+        If you are using Yarn:
+        yarn global add win-node-env
+for linux
+        yarn add config
+        config folder mut be in root folder not src 
+                config file will accept JSON,XML or YAML file
+        config dosyasinin icersindeki tum dosyalari okur ve hangi variable i kullanacagina  process.env.NODE_ENV a gore karar verir
+CORS 
+        bu projede sadece development mode icin cors enabled olacak in production da port numarasini whilelist yapacagiz
 
                 
 
